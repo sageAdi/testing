@@ -2,7 +2,7 @@
 
 ## Status
 
-Feature branch pushed. Pull request was skipped, then retried. PR retry is blocked because GitHub CLI is installed but not authenticated. Vercel deployment completed.
+Feature branch pushed. Pull request was skipped, then retried. PR retry is blocked because GitHub CLI has an invalid token and the GitHub connector lacks PR creation permission. Vercel deployment completed.
 
 ## Build And Test Result
 
@@ -42,10 +42,10 @@ The user first requested PR creation, explicitly chose `Skip PR` on 2026-07-02T1
 
 ## Pull Request Blockers
 
-- GitHub CLI `gh` is installed, but `gh auth status` reports no logged-in GitHub hosts.
+- GitHub CLI `gh` is installed, but `gh auth status` reports the token for `sageAdi` is invalid.
 - GitHub connector PR creation failed with `403 Resource not accessible by integration`.
-- GitHub branch search found `feature/feedback-collector`, but did not find `main`, so the repository does not currently have a `main` base branch for a PR.
-- Because authenticated GitHub tooling and a base branch are unavailable, no pull request was created from this environment.
+- GitHub branch search now finds both `main` and `feature/feedback-collector`.
+- Because authenticated GitHub tooling and connector PR permissions are unavailable, no pull request was created from this environment.
 
 ## User Follow-Up
 
@@ -56,7 +56,7 @@ The user expected a GitHub commit to be visible. Completed the safe PR-path publ
 3. committed on `feature/feedback-collector`
 4. pushed `feature/feedback-collector`
 
-PR creation was skipped, then retried. Retry is blocked until `gh auth login` is completed and a base branch exists.
+PR creation was skipped, then retried. Retry is blocked until `gh auth login -h github.com` refreshes the invalid GitHub CLI token or connector permissions are updated.
 
 ## Commit And Push
 
@@ -78,11 +78,12 @@ Operations deployment is complete. PR creation can be retried after GitHub CLI a
 
 ## PR Retry
 
-Retry requested on 2026-07-02T18:32:58Z.
+Retry requested on 2026-07-02T18:32:58Z and again on 2026-07-02T18:36:45Z.
 
 Current blocker:
 
-- `gh auth status` returned: "You are not logged into any GitHub hosts. To log in, run: gh auth login"
+- `gh auth status` returned: "The token in default is invalid. To re-authenticate, run: gh auth login -h github.com"
+- GitHub connector PR creation returned: `403 Resource not accessible by integration`
 
 ## Intended PR Scope
 
