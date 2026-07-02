@@ -48,11 +48,11 @@
 | Infrastructure Design | Skipped | No infrastructure impact. |
 | Code Generation | Completed | Approved by user on 2026-07-02T18:01:39Z. |
 | Build and Test | Completed | Approved by user on 2026-07-02T18:07:33Z. |
-| Operations | Blocked | User requested PR creation, but no Git remote is configured and `gh` is not installed. No commit, push, PR, or deployment has been performed. |
+| Operations | Partially Complete | Feature branch pushed to GitHub; PR creation still blocked because `gh` is not installed. No deployment has been performed. |
 
 ## Resume Point
 
-Await repository remote configuration and GitHub CLI availability, or explicit instruction to skip PR.
+Await GitHub CLI availability for PR creation, manual PR creation, or explicit instruction to skip PR.
 
 ## Execution Plan Summary
 
