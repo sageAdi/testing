@@ -2,7 +2,7 @@
 
 ## Status
 
-Feature branch pushed. Pull request creation still blocked by missing GitHub CLI.
+Feature branch pushed. Pull request creation is blocked by GitHub tooling/integration permissions and missing base branch.
 
 ## Build And Test Result
 
@@ -42,7 +42,9 @@ The user requested PR creation.
 ## Pull Request Blockers
 
 - GitHub CLI `gh` is not installed in this environment.
-- Because authenticated GitHub tooling is unavailable, no pull request was created from this environment.
+- GitHub connector PR creation failed with `403 Resource not accessible by integration`.
+- GitHub branch search found `feature/feedback-collector`, but did not find `main`, so the repository does not currently have a `main` base branch for a PR.
+- Because authenticated GitHub tooling and a base branch are unavailable, no pull request was created from this environment.
 
 ## User Follow-Up
 
@@ -63,6 +65,12 @@ PR creation still requires GitHub tooling or manual PR creation from GitHub afte
 | Remote Branch | `origin/feature/feedback-collector` |
 | Push Status | Successful |
 | Local Untracked Files Excluded | `.vscode/` |
+
+## Current Options
+
+1. Create or push a `main` branch, then create a PR manually or after GitHub tooling is available.
+2. Push the current commit history directly to `main` if this is an empty/new repository and a PR is not required.
+3. Install/authenticate GitHub CLI `gh`, then retry PR creation after a base branch exists.
 
 ## Intended PR Scope
 
