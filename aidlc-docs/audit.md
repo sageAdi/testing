@@ -116,3 +116,19 @@ Create a dependency-free single-page feedback collector using plain HTML, CSS, a
 **Context**: Operations PR creation blocked by GitHub connector permissions and missing base branch.
 
 ---
+
+## Operations
+**Timestamp**: 2026-07-02T18:18:05Z
+**User Input**: "Skip PR"
+**AI Response**: "Recorded the pull request step as explicitly skipped and moved Operations to the separate Vercel deployment decision gate. No deployment action was performed."
+**Context**: Operations pull request skipped; awaiting deployment decision.
+
+---
+
+## Operations
+**Timestamp**: 2026-07-02T18:19:54Z
+**User Input**: "Deploy to Vercel"
+**AI Response**: "Recorded deployment approval, ran `vercel deploy . -y`, deployed the static app to Vercel, recorded the production, alias, and inspect URLs, and marked the AI-DLC workflow complete. The Vercel CLI created `.vercel/` metadata and `.gitignore` to ignore it."
+**Context**: Operations deployment completed.
+
+---
