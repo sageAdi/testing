@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Collector</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Local feedback</p>
+        <h1 id="page-title">Feedback Collector</h1>
+        <p class="lede">Collect quick ratings and comments in this browser. Entries stay on this device.</p>
+      </section>
+
+      <section class="workspace" aria-label="Feedback collector">
+        <form class="feedback-form" id="feedback-form" novalidate data-testid="feedback-form">
+          <div class="form-header">
+            <h2>New feedback</h2>
+            <p id="form-help">Rating and feedback are required.</p>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="name">Name <span class="optional">optional</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" data-testid="name-input">
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="optional">optional</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" data-testid="email-input">
+              <p class="field-error" id="email-error" data-testid="email-error"></p>
+            </div>
+          </div>
+
+          <fieldset class="rating-field" aria-describedby="rating-error">
+            <legend>Rating</legend>
+            <div class="rating-options" data-testid="rating-options">
+              <label><input type="radio" name="rating" value="1">1</label>
+              <label><input type="radio" name="rating" value="2">2</label>
+              <label><input type="radio" name="rating" value="3">3</label>
+              <label><input type="radio" name="rating" value="4">4</label>
+              <label><input type="radio" name="rating" value="5">5</label>
+            </div>
+            <p class="field-error" id="rating-error" data-testid="rating-error"></p>
+          </fieldset>
+
+          <div class="field">
+            <div class="label-row">
+              <label for="message">Feedback</label>
+              <span id="character-count" data-testid="character-count">0/500</span>
+            </div>
+            <textarea id="message" name="message" maxlength="500" rows="6" aria-describedby="message-error character-count" data-testid="message-input"></textarea>
+            <p class="field-error" id="message-error" data-testid="message-error"></p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-button" data-testid="submit-button">Save feedback</button>
+            <p class="status-message" id="status-message" role="status" aria-live="polite" data-testid="status-message"></p>
+          </div>
+        </form>
+
+        <section class="feedback-panel" aria-labelledby="saved-title">
+          <div class="panel-header">
+            <div>
+              <h2 id="saved-title">Saved feedback</h2>
+              <p id="feedback-count" data-testid="feedback-count">0 entries</p>
+            </div>
+            <button type="button" class="secondary-button" id="clear-all" data-testid="clear-all-button">Clear all</button>
+          </div>
+
+          <div class="empty-state" id="empty-state" data-testid="empty-state">
+            No feedback saved yet.
+          </div>
+
+          <ul class="feedback-list" id="feedback-list" aria-live="polite" data-testid="feedback-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

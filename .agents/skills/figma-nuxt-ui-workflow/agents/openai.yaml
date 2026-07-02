@@ -1,0 +1,13 @@
+interface:
+  display_name: "Figma Nuxt UI Workflow"
+  short_description: "Build Nuxt UI from Figma designs"
+  default_prompt: "Use $figma-nuxt-ui-workflow to inspect this Figma design and implement it in my Nuxt app."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "figma"
+      description: "Figma MCP tools for design context, screenshots, variables, assets, and Code Connect"
+
+policy:
+  allow_implicit_invocation: true
