@@ -48,11 +48,11 @@
 | Infrastructure Design | Skipped | No infrastructure impact. |
 | Code Generation | Completed | Approved by user on 2026-07-02T18:01:39Z. |
 | Build and Test | Completed | Approved by user on 2026-07-02T18:07:33Z. |
-| Operations | Completed With PR Retry Blocked | Feature branch pushed to GitHub; PR creation retry is blocked because `gh` has an invalid token and the GitHub connector lacks PR creation permission; Vercel deployment completed. |
+| Operations | Completed | Feature branch pushed to GitHub; draft PR created; Vercel deployment completed. |
 
 ## Resume Point
 
-Workflow complete. PR retry can resume after `gh auth login -h github.com`; `main` and `feature/feedback-collector` branches now exist.
+Workflow complete.
 
 ## Execution Plan Summary
 
@@ -74,3 +74,13 @@ Workflow complete. PR retry can resume after `gh auth login -h github.com`; `mai
 | Alias URL | `https://testing-six-ebon.vercel.app` |
 | Inspect URL | `https://vercel.com/sageadis-projects/testing/GbHPcrTLDVG1vYziAk4ES1gWbp4Z` |
 | Completed At | 2026-07-02T18:19:54Z |
+
+## Pull Request Summary
+
+| Field | Value |
+|---|---|
+| PR URL | `https://github.com/sageAdi/testing/pull/1` |
+| Type | Draft |
+| Base | `main` |
+| Head | `feature/feedback-collector` |
+| Created At | 2026-07-03T02:37:44Z |
